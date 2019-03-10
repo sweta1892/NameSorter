@@ -1,1 +1,2 @@
-﻿dotnet test ./NameSorterTest
+﻿#!/bin/bash
+dotnet test ./NameSorterTest
