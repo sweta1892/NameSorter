@@ -1,40 +1,42 @@
 ﻿using NameSorter.Models;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.IO;
 
 namespace NameSorter.Services
 {
-    class ReadDataFromFileService : IReadDataService
+    class FileReadDataService : IReadDataService
     {
+
+        private static Logger log = LogManager.GetCurrentClassLogger();
         public List<Name> ReadData(string fileName)
         {
             List<Name> listOfNames = new List<Name>();
             CreateNameObjects createNameObjects = new CreateNameObjects();
-            DataValidationService dataValidation = new DataValidationService();
+            NameDataValidateService dataValidation = new NameDataValidateService();
 
             try
             {
                 using (StreamReader streamReader = new StreamReader(fileName))
                 {
-                    string line="";
-                    while ((line = streamReader.ReadLine()) != null)
+                    string NameRecord="";
+                    while ((NameRecord = streamReader.ReadLine()) != null)
                     {
-                        if (dataValidation.IsValid(line))
+                        if (dataValidation.IsValid(NameRecord))
                         {
-                            listOfNames.Add(createNameObjects.CreateNameObjectFromString(line));
+                            listOfNames.Add(createNameObjects.CreateNameObjectFromString(NameRecord));
                         }
                         else
                         {
-                            //log error to file
+                            log.Info("Name record "+ NameRecord + " ignored due to invalid format.");
                         }
                     }
                 }
             }
             catch (IOException e)
             {
-                Console.WriteLine("The file could not be read:");
-                Console.WriteLine(e.Message);
+               log.Error(e.Message);
             }
 
             return listOfNames;

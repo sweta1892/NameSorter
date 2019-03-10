@@ -6,22 +6,27 @@ namespace NameSorter.Models
     {
         public Name CreateNameObjectFromString(string nameLineItem)
         {
+            //get the Last Name and Given Names ignoring the empty spaces
             string[] words = nameLineItem.Split(new char[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
-                string firstName = words[0];
 
-                for (int index = 1; index < words.Length - 1; index++)
+            string givenName = words[0];
+
+            for (int index = 1; index < words.Length - 1; index++)
                 {
-                    firstName += ' ' + words[index];
+                    givenName += ' ' + words[index];
                 }
-                string lastName = words[words.Length - 1];
-                return CreateNameObjectFromProperties(firstName, lastName);
+            string lastName = words[words.Length - 1];
+
+            return CreateNameObjectFromProperties(givenName, lastName);
         }
 
-        public Name CreateNameObjectFromProperties(string firstName, string lastName)
+        public Name CreateNameObjectFromProperties(string givenName, string lastName)
         {
-            Name name = new Name();
-            name.firstName = firstName;
-            name.lastName = lastName;
+            Name name = new Name
+            {
+                GivenName = givenName,
+                LastName = lastName
+            };
             return name;
         }
     }

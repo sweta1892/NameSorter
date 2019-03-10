@@ -5,49 +5,49 @@ using Xunit;
 
 namespace NameSorterTest
 {
-    public class SortingServiceByLastNameThenFirstNameUnitTest
+    public class SortingServiceByGivenNameUnitTest
     {
 
-        ISortingRule _iSortingRule = new LastNameThenFirstNameSortingRule();
+        ISortingRule _iSortingRule = new GivenNameSortingRule();
 
         [Fact]
-        public void LastNameThenFirstNameSortingRuleTest()
+        public void GivenNameSortingRuleTest()
         {
             //Arrange
             List<Name> listOfNames = new List<Name>();
             listOfNames.Add(new Name
             {
-                firstName = "Sweta Anant", lastName = "Shah"
+                GivenName = "Janet", LastName = "Parsons"
             });
             listOfNames.Add(new Name
             {
-                firstName = "Sweta", lastName = "Shah"
+                GivenName = "Vaughn", LastName = "Lewis"
             });
             listOfNames.Add(new Name
             {
-                firstName = "Shriya Anant", lastName = "Shah"
+                GivenName = "Adonis Julius", LastName = "Archer"
             });
             listOfNames.Add(new Name
             {
-                firstName = "Param", lastName = "Shah"
+                GivenName = "Shelby Nathan", LastName = "Yoder"
             });
 
             List<Name> actResult = new List<Name>();
             actResult.Add(new Name
             {
-                firstName = "Param", lastName = "Shah"
+                GivenName = "Adonis Julius", LastName = "Archer"
             });
             actResult.Add(new Name
             {
-                firstName = "Shriya Anant", lastName = "Shah"
+                GivenName = "Janet", LastName = "Parsons"
             });
             actResult.Add(new Name
             {
-                firstName = "Sweta", lastName = "Shah"
+                GivenName = "Shelby Nathan", LastName = "Yoder"
             });
             actResult.Add(new Name
             {
-                firstName = "Sweta Anant", lastName = "Shah"
+                GivenName = "Vaughn", LastName = "Lewis"
             });
 
             //Act

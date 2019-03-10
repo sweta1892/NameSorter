@@ -5,7 +5,7 @@ namespace NameSorterTest
 {
     public class DataValidationServiceUnitTests
     {
-        private DataValidationService _dataValidation = new DataValidationService();
+        private NameDataValidateService _dataValidation = new NameDataValidateService();
 
         [Fact]
         public void ValidateNameLineItemForLettersOnly()

@@ -21,6 +21,7 @@ C:\Users\Anant\source\repos\NameSorter\NameSorterTest\bin\Debug\netcoreapp2.1\un
 C:\Users\Anant\source\repos\NameSorter\NameSorterTest\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
 C:\Users\Anant\source\repos\NameSorter\NameSorterTest\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
 C:\Users\Anant\source\repos\NameSorter\NameSorterTest\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+C:\Users\Anant\source\repos\NameSorter\NameSorterTest\bin\Debug\netcoreapp2.1\nlog.config
 C:\Users\Anant\source\repos\NameSorter\NameSorterTest\bin\Debug\netcoreapp2.1\NameSorterTest.deps.json
 C:\Users\Anant\source\repos\NameSorter\NameSorterTest\bin\Debug\netcoreapp2.1\NameSorterTest.runtimeconfig.json
 C:\Users\Anant\source\repos\NameSorter\NameSorterTest\bin\Debug\netcoreapp2.1\NameSorterTest.runtimeconfig.dev.json

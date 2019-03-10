@@ -1,13 +1,14 @@
 ﻿using NameSorter.Models;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.IO;
 
 namespace NameSorter.Services
 {
-    class WriteDataToFileService : IWriteDataService
+    class FileWriteDataService : IWriteDataService
     {
-       
+        private static Logger log = LogManager.GetCurrentClassLogger();
         public void WriteData(string fileName, List<Name> listOfNames)
         {
             try
@@ -22,8 +23,7 @@ namespace NameSorter.Services
             }
             catch (IOException e)
             {
-                Console.WriteLine("The file could not be write");
-                Console.WriteLine(e.Message);
+                log.Error(e.Message);
             }
         }
     }

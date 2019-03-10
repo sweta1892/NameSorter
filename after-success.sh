@@ -1,2 +1,1 @@
-﻿#!/bin/bash
-echo I'll be invoked after the successful build!
+﻿echo Invoked after the successful build!

@@ -2,24 +2,28 @@
 {
     class Name
     {
-        public string firstName { get; set; }
-        public string lastName { get; set; }
+        public string GivenName { get; set; }
+        public string LastName { get; set; }
 
         public override string ToString()
         {
-            return this.firstName + ' ' + this.lastName;
+            return this.GivenName + ' ' + this.LastName;
         }
 
         public override bool Equals(object obj)
         {
-            var nameObj = obj as Name;
 
-            if (nameObj == null)
+            if (!(obj is Name nameObj))
             {
                 return false;
             }
 
-            return (this.firstName.Equals(nameObj.firstName) && this.lastName.Equals(nameObj.lastName));
+            return (this.GivenName.Equals(nameObj.GivenName) && this.LastName.Equals(nameObj.LastName));
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
     }
 }

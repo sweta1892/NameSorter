@@ -11,6 +11,7 @@ C:\Users\Anant\source\repos\_Bkp_1512\NameSorter\NameSorter\obj\Debug\netcoreapp
 C:\Users\Anant\source\repos\_Bkp_1512\NameSorter\NameSorter\obj\Debug\netcoreapp2.1\NameSorter.pdb
 C:\Users\Anant\source\repos\NameSorter\NameSorter\bin\Debug\netcoreapp2.1\appsettings.json
 C:\Users\Anant\source\repos\NameSorter\NameSorter\bin\Debug\netcoreapp2.1\unsorted-names-list.txt
+C:\Users\Anant\source\repos\NameSorter\NameSorter\bin\Debug\netcoreapp2.1\nlog.config
 C:\Users\Anant\source\repos\NameSorter\NameSorter\bin\Debug\netcoreapp2.1\NameSorter.deps.json
 C:\Users\Anant\source\repos\NameSorter\NameSorter\bin\Debug\netcoreapp2.1\NameSorter.runtimeconfig.json
 C:\Users\Anant\source\repos\NameSorter\NameSorter\bin\Debug\netcoreapp2.1\NameSorter.runtimeconfig.dev.json
@@ -21,4 +22,3 @@ C:\Users\Anant\source\repos\NameSorter\NameSorter\obj\Debug\netcoreapp2.1\NameSo
 C:\Users\Anant\source\repos\NameSorter\NameSorter\obj\Debug\netcoreapp2.1\NameSorter.AssemblyInfo.cs
 C:\Users\Anant\source\repos\NameSorter\NameSorter\obj\Debug\netcoreapp2.1\NameSorter.dll
 C:\Users\Anant\source\repos\NameSorter\NameSorter\obj\Debug\netcoreapp2.1\NameSorter.pdb
-C:\Users\Anant\source\repos\NameSorter\NameSorter\obj\Debug\netcoreapp2.1\NameSorter.csprojAssemblyReference.cache

@@ -1,5 +1,5 @@
+C:\Users\Anant\source\repos\NameSorter\NameSorterTest\bin\Release\netcoreapp2.1\nlog.config
 C:\Users\Anant\source\repos\NameSorter\NameSorterTest\bin\Release\netcoreapp2.1\appsettings.json
-C:\Users\Anant\source\repos\NameSorter\NameSorterTest\bin\Release\netcoreapp2.1\unsorted-names-list.txt
 C:\Users\Anant\source\repos\NameSorter\NameSorterTest\bin\Release\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
 C:\Users\Anant\source\repos\NameSorter\NameSorterTest\bin\Release\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
 C:\Users\Anant\source\repos\NameSorter\NameSorterTest\bin\Release\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll

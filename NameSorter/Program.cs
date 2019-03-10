@@ -4,9 +4,8 @@ using System;
 using System.Runtime.CompilerServices;
 using Microsoft.Extensions.Configuration;
 using System.IO;
-using Microsoft.Extensions.DependencyInjection;
-using NLog.Extensions.Logging;
-using Microsoft.Extensions.Logging;
+using NLog;
+using System.Collections.Generic;
 
 [assembly: InternalsVisibleTo("NameSorterTest")]
 namespace NameSorter
@@ -23,45 +22,27 @@ namespace NameSorter
             var _NameSorterSettingsConfig = new NameSorterSettingsConfig();
             configuration.GetSection("NameSorterSettings").Bind(_NameSorterSettingsConfig);
 
-            var servicesProvider = BuildDi();
-            var runner = servicesProvider.GetRequiredService<Runner>();
-
-            runner.DoAction("Action1");
-
-            NameList nameList = new NameList();
+            //reads Output location from command-line arg
             string inputFileName = args[0].Trim();
 
+            //reads Output location from config
             string outputFileName = _NameSorterSettingsConfig.Output;
             
-            IReadDataService _dataReader = new ReadDataFromFileService();
-            nameList.listOfNames = _dataReader.ReadData(inputFileName);
+            //reads Input file and stores data in memory-list for processing
+            IReadDataService _dataReader = new FileReadDataService();
+            List<Name> ListOfNames = _dataReader.ReadData(inputFileName);
 
+            //reads Sorting method from config
             ISortingService _nameSorter = new NameSortingService(_NameSorterSettingsConfig.SortingSwitch);
-            nameList.listOfNames = _nameSorter.SortNameList(nameList.listOfNames);
-                        
-            IWriteDataService _dataWriter = new WriteDataToFileService();
-            _dataWriter.WriteData(outputFileName, nameList.listOfNames);
+            ListOfNames = _nameSorter.SortNameList(ListOfNames);
+    
+            //stores sorted names to the Output file
+            IWriteDataService _dataWriter = new FileWriteDataService();
+            _dataWriter.WriteData(outputFileName, ListOfNames);
 
-            nameList.PrintFullList();
+            //print sorted names on screen
+            new PrintNameList().PrintFullList(ListOfNames);
             Console.ReadKey();
-
-            // Ensure to flush and stop internal timers/threads before application-exit (Avoid segmentation fault on Linux)
-            NLog.LogManager.Shutdown();
-        }
-
-        private static ServiceProvider BuildDi()
-        {
-            return new ServiceCollection()
-                .AddLogging(builder => {
-                    builder.SetMinimumLevel(LogLevel.Information);
-                    builder.AddNLog(new NLogProviderOptions
-                    {
-                        CaptureMessageTemplates = true,
-                        CaptureMessageProperties = true
-                    });
-                })
-                .AddTransient<Runner>()
-                .BuildServiceProvider();
-        }
+           }       
     }
 }

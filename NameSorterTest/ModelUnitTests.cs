@@ -17,8 +17,8 @@ namespace NameSorterTest
             string line = "Sweta Anant Shah";
             Name actName = new Name
             {
-                firstName = "Sweta Anant",
-                lastName = "Shah"
+                GivenName = "Sweta Anant",
+                LastName = "Shah"
             };
 
             //Act

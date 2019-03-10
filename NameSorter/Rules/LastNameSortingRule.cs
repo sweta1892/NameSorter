@@ -14,7 +14,7 @@ namespace NameSorter.Rules
         public List<Name> SortNameList(List<Name> listOfNames)
         {
             IEnumerable<Name> sortedListOfNames = from person in listOfNames
-                                                  orderby person.lastName
+                                                  orderby person.LastName
                                                   select person;
             return sortedListOfNames.ToList();
         }

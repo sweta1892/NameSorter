@@ -16,37 +16,37 @@ namespace NameSorterTest
             List<Name> listOfNames = new List<Name>();
             listOfNames.Add(new Name
             {
-                firstName = "Janet", lastName = "Parsons"
+                GivenName = "Janet", LastName = "Parsons"
             });
             listOfNames.Add(new Name
             {
-                firstName = "Vaughn", lastName = "Lewis"
+                GivenName = "Vaughn", LastName = "Lewis"
             });
             listOfNames.Add(new Name
             {
-                firstName = "Adonis Julius", lastName = "Archer"
+                GivenName = "Adonis Julius", LastName = "Archer"
             });
             listOfNames.Add(new Name
             {
-                firstName = "Shelby Nathan", lastName = "Yoder"
+                GivenName = "Shelby Nathan", LastName = "Yoder"
             });
 
             List<Name> actResult = new List<Name>();
             actResult.Add(new Name
             {
-                firstName = "Adonis Julius", lastName = "Archer"
+                GivenName = "Adonis Julius", LastName = "Archer"
             });
             actResult.Add(new Name
             {
-                firstName = "Vaughn", lastName = "Lewis"
+                GivenName = "Vaughn", LastName = "Lewis"
             });
             actResult.Add(new Name
             {
-                firstName = "Janet", lastName = "Parsons"
+                GivenName = "Janet", LastName = "Parsons"
             });
             actResult.Add(new Name
             {
-                firstName = "Shelby Nathan", lastName = "Yoder"
+                GivenName = "Shelby Nathan", LastName = "Yoder"
             });
            
 

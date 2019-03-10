@@ -3,11 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using NameSorter.Rules;
+using NLog;
 
 namespace NameSorter.Services
 {
     class NameSortingService : ISortingService
     {
+        private static Logger log = LogManager.GetCurrentClassLogger();
         private readonly List<ISortingRule> _sortingRules;
         private string _sortBy;
 
@@ -15,9 +17,9 @@ namespace NameSorter.Services
         {
             this._sortBy = sortBy;
             _sortingRules = new List<ISortingRule>();
-            _sortingRules.Add(new FirstNameSortingRule());
+            _sortingRules.Add(new GivenNameSortingRule());
             _sortingRules.Add(new LastNameSortingRule());
-            _sortingRules.Add(new LastNameThenFirstNameSortingRule());
+            _sortingRules.Add(new LastNameThenGivenNameSortingRule());
         }
 
         public List<Name> SortNameList(List<Name> listOfNames)
@@ -27,9 +29,9 @@ namespace NameSorter.Services
             {
                 sortedListOfNames =_sortingRules.First(r => r.IsMatch(_sortBy)).SortNameList(listOfNames);
             }
-            catch(InvalidOperationException execption)
+            catch(InvalidOperationException e)
             {
-                Console.WriteLine(execption.Message);
+                log.Error(e.Message);
             }
             return sortedListOfNames;
         }

@@ -4,17 +4,17 @@ using System.Linq;
 
 namespace NameSorter.Rules
 {
-    class LastNameThenFirstNameSortingRule : ISortingRule
+    class LastNameThenGivenNameSortingRule : ISortingRule
     {
         public bool IsMatch(string rule)
         {
-            return rule.Equals("LastNameThenFirstName");
+            return rule.Equals("LastNameThenGivenName");
         }
 
         public List<Name> SortNameList(List<Name> listOfNames)
         {
             IEnumerable<Name> sortedListOfNames = from person in listOfNames
-                                                  orderby person.lastName, person.firstName
+                                                  orderby person.LastName, person.GivenName
                                                   select person;
 
             return sortedListOfNames.ToList();        
